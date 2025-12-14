@@ -38,5 +38,23 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-primary-600;
   }
+  
+  .svg-animate {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .svg-glow {
+    filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.5));
+    transition: filter 0.3s ease;
+  }
+  
+  .svg-glow:hover {
+    filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.8));
+  }
 }
 

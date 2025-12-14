@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" class="algorithm-flow">
+  <defs>
+    <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Flow boxes -->
+  <rect x="50" y="150" width="120" height="80" rx="10" fill="url(#flowGradient)" opacity="0.9" filter="url(#glow)"/>
+  <text x="110" y="195" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Input</text>
+  
+  <rect x="220" y="150" width="120" height="80" rx="10" fill="url(#flowGradient)" opacity="0.9" filter="url(#glow)"/>
+  <text x="280" y="195" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Process</text>
+  
+  <rect x="390" y="150" width="120" height="80" rx="10" fill="url(#flowGradient)" opacity="0.9" filter="url(#glow)"/>
+  <text x="450" y="195" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Output</text>
+  
+  <!-- Arrows -->
+  <path d="M 170 190 L 220 190" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 340 190 L 390 190" stroke="#667eea" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#667eea"/>
+    </marker>
+  </defs>
+  
+  <!-- Decorative elements -->
+  <circle cx="110" cy="80" r="25" fill="#f093fb" opacity="0.3" class="float"/>
+  <circle cx="450" cy="320" r="30" fill="#667eea" opacity="0.3" class="float"/>
+  <circle cx="280" cy="50" r="20" fill="#764ba2" opacity="0.3" class="float"/>
+  
+  <style>
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</svg>
+

@@ -4,16 +4,26 @@ title: Solve Genomics
 description: Comprehensive DNA Sequence Alignment and Pattern Matching Algorithms
 ---
 
-<div class="gradient-header">
-    <div class="container mx-auto px-4">
-        <h1 class="text-5xl font-bold mb-4">Solve Genomics</h1>
-        <p class="text-xl opacity-95 max-w-3xl mx-auto">
-            Comprehensive DNA Sequence Alignment and Pattern Matching Algorithms
-        </p>
-        <div class="mt-8 text-lg opacity-90">
-            <strong>Shyamal Suhana Chandra</strong><br>
-            <span class="text-lg">Sapana Micro Software</span><br>
-            <span class="text-base">Implementation, Analysis, and Performance Evaluation</span>
+<div class="gradient-header relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <img src="{{ '/assets/images/svg/dna-helix.svg' | relative_url }}" alt="" class="w-full h-full object-cover">
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="flex-1 text-center md:text-left mb-8 md:mb-0">
+                <h1 class="text-5xl font-bold mb-4">Solve Genomics</h1>
+                <p class="text-xl opacity-95 max-w-3xl mx-auto md:mx-0">
+                    Comprehensive DNA Sequence Alignment and Pattern Matching Algorithms
+                </p>
+                <div class="mt-8 text-lg opacity-90">
+                    <strong>Shyamal Suhana Chandra</strong><br>
+                    <span class="text-lg">Sapana Micro Software</span><br>
+                    <span class="text-base">Implementation, Analysis, and Performance Evaluation</span>
+                </div>
+            </div>
+            <div class="flex-1 flex justify-center md:justify-end">
+                <img src="{{ '/assets/images/svg/dna-helix.svg' | relative_url }}" alt="DNA Helix" class="w-64 h-64 svg-glow svg-animate">
+            </div>
         </div>
     </div>
 </div>
@@ -40,21 +50,33 @@ description: Comprehensive DNA Sequence Alignment and Pattern Matching Algorithm
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-            <div class="card text-center">
-                <div class="text-4xl font-bold text-primary-600 mb-2">25+</div>
-                <div class="text-gray-600">Algorithms</div>
+            <div class="card text-center relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-20 h-20 opacity-10">
+                    <img src="{{ '/assets/images/svg/algorithm-flow.svg' | relative_url }}" alt="" class="w-full h-full">
+                </div>
+                <div class="text-4xl font-bold text-primary-600 mb-2 relative z-10">25+</div>
+                <div class="text-gray-600 relative z-10">Algorithms</div>
             </div>
-            <div class="card text-center">
-                <div class="text-4xl font-bold text-primary-600 mb-2">7,000+</div>
-                <div class="text-gray-600">Test Cases</div>
+            <div class="card text-center relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-20 h-20 opacity-10">
+                    <img src="{{ '/assets/images/svg/network-graph.svg' | relative_url }}" alt="" class="w-full h-full">
+                </div>
+                <div class="text-4xl font-bold text-primary-600 mb-2 relative z-10">7,000+</div>
+                <div class="text-gray-600 relative z-10">Test Cases</div>
             </div>
-            <div class="card text-center">
-                <div class="text-4xl font-bold text-primary-600 mb-2">100%</div>
-                <div class="text-gray-600">Code Coverage</div>
+            <div class="card text-center relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-20 h-20 opacity-10">
+                    <img src="{{ '/assets/images/svg/performance-chart.svg' | relative_url }}" alt="" class="w-full h-full">
+                </div>
+                <div class="text-4xl font-bold text-primary-600 mb-2 relative z-10">100%</div>
+                <div class="text-gray-600 relative z-10">Code Coverage</div>
             </div>
-            <div class="card text-center">
-                <div class="text-4xl font-bold text-primary-600 mb-2">C++</div>
-                <div class="text-gray-600">Implementation</div>
+            <div class="card text-center relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-20 h-20 opacity-10">
+                    <img src="{{ '/assets/images/svg/dna-sequence.svg' | relative_url }}" alt="" class="w-full h-full">
+                </div>
+                <div class="text-4xl font-bold text-primary-600 mb-2 relative z-10">C++</div>
+                <div class="text-gray-600 relative z-10">Implementation</div>
             </div>
         </div>
     </div>
@@ -286,7 +308,30 @@ make -j4
         <!-- Performance Chart -->
         <div class="card max-w-4xl mx-auto mt-8">
             <h2 class="text-2xl font-bold text-primary-600 mb-6">Performance Comparison</h2>
-            <div id="performanceChartContainer" class="w-full h-96"></div>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-1">
+                    <img src="{{ '/assets/images/svg/performance-chart.svg' | relative_url }}" alt="Performance Chart" class="w-full h-auto svg-glow">
+                </div>
+                <div id="performanceChartContainer" class="flex-1 w-full h-96"></div>
+            </div>
+        </div>
+        
+        <!-- Algorithm Flow Visualization -->
+        <div class="card max-w-4xl mx-auto mt-8">
+            <h2 class="text-2xl font-bold text-primary-600 mb-6">Algorithm Processing Flow</h2>
+            <img src="{{ '/assets/images/svg/algorithm-flow.svg' | relative_url }}" alt="Algorithm Flow" class="w-full h-auto svg-glow svg-animate">
+        </div>
+        
+        <!-- DNA Sequence Visualization -->
+        <div class="card max-w-4xl mx-auto mt-8">
+            <h2 class="text-2xl font-bold text-primary-600 mb-6">DNA Sequence Pattern Matching</h2>
+            <img src="{{ '/assets/images/svg/dna-sequence.svg' | relative_url }}" alt="DNA Sequence" class="w-full h-auto svg-glow">
+        </div>
+        
+        <!-- Network Graph -->
+        <div class="card max-w-4xl mx-auto mt-8">
+            <h2 class="text-2xl font-bold text-primary-600 mb-6">Algorithm Network Graph</h2>
+            <img src="{{ '/assets/images/svg/network-graph.svg' | relative_url }}" alt="Network Graph" class="w-full h-auto svg-glow">
         </div>
     </div>
 </section>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" class="performance-chart">
+  <defs>
+    <linearGradient id="barGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Grid lines -->
+  <line x1="80" y1="50" x2="80" y2="350" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="80" y1="350" x2="550" y2="350" stroke="#e0e0e0" stroke-width="2"/>
+  
+  <!-- Y-axis labels -->
+  <text x="40" y="60" fill="#666" font-size="12">100</text>
+  <text x="40" y="150" fill="#666" font-size="12">75</text>
+  <text x="40" y="240" fill="#666" font-size="12">50</text>
+  <text x="40" y="330" fill="#666" font-size="12">25</text>
+  <text x="40" y="360" fill="#666" font-size="12">0</text>
+  
+  <!-- Bars -->
+  <rect x="120" y="280" width="60" height="70" fill="url(#barGradient)" rx="5" class="bar"/>
+  <text x="150" y="365" text-anchor="middle" fill="#666" font-size="11">Exact</text>
+  
+  <rect x="210" y="290" width="60" height="60" fill="url(#barGradient)" rx="5" class="bar"/>
+  <text x="240" y="365" text-anchor="middle" fill="#666" font-size="11">Naive</text>
+  
+  <rect x="300" y="300" width="60" height="50" fill="url(#barGradient)" rx="5" class="bar"/>
+  <text x="330" y="365" text-anchor="middle" fill="#666" font-size="11">R-K</text>
+  
+  <rect x="390" y="250" width="60" height="100" fill="url(#barGradient)" rx="5" class="bar"/>
+  <text x="420" y="365" text-anchor="middle" fill="#666" font-size="11">KMP</text>
+  
+  <rect x="480" y="200" width="60" height="150" fill="url(#barGradient)" rx="5" class="bar"/>
+  <text x="510" y="365" text-anchor="middle" fill="#666" font-size="11">B-M</text>
+  
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" fill="#333" font-size="18" font-weight="bold">Algorithm Performance</text>
+  
+  <style>
+    .bar {
+      animation: grow 1s ease-out;
+    }
+    @keyframes grow {
+      from { height: 0; y: 350; }
+      to { height: var(--height); y: var(--y); }
+    }
+  </style>
+</svg>
+
