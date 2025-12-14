@@ -27,7 +27,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: true
+          bundler-cache: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -39,7 +39,11 @@ jobs:
         run: npm ci
 
       - name: Install Ruby dependencies
-        run: bundle install
+        run: |
+          gem install bundler -v '~> 2.0'
+          bundle config set --local deployment 'false'
+          bundle config set --local path 'vendor/bundle'
+          bundle install --jobs 4 --retry 3
 
       - name: Build TypeScript
         run: npm run build:ts
@@ -48,9 +52,11 @@ jobs:
         run: npm run build:css
 
       - name: Build Jekyll site
-        run: bundle exec jekyll build
+        run: |
+          bundle exec jekyll build --baseurl "${{ github.event.repository.name }}"
         env:
           JEKYLL_ENV: production
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
