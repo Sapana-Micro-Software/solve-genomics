@@ -3,8 +3,8 @@ title: Solve Genomics
 description: Comprehensive DNA Sequence Alignment and Pattern Matching Algorithms
 author: Shyamal Suhana Chandra
 organization: Sapana Micro Software
-url: https://shyamalchandra.github.io
-baseurl: /Solve-Genomics
+url: https://sapana-micro-software.github.io
+baseurl: /solve-genomics
 
 # Build settings
 markdown: kramdown
