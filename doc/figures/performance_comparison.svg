@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E5C8A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Exact Matching Algorithm Performance
+  </text>
+  
+  <!-- Y-axis label -->
+  <text x="20" y="200" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#34495e" transform="rotate(-90 20 200)">
+    Time (microseconds)
+  </text>
+  
+  <!-- X-axis label -->
+  <text x="300" y="380" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#34495e">
+    Sequence Length
+  </text>
+  
+  <!-- Grid lines -->
+  <g stroke="#e0e0e0" stroke-width="1">
+    <line x1="60" y1="50" x2="60" y2="330"/>
+    <line x1="60" y1="330" x2="550" y2="330"/>
+    <line x1="60" y1="280" x2="550" y2="280" stroke-dasharray="2,2"/>
+    <line x1="60" y1="230" x2="550" y2="230" stroke-dasharray="2,2"/>
+    <line x1="60" y1="180" x2="550" y2="180" stroke-dasharray="2,2"/>
+    <line x1="60" y1="130" x2="550" y2="130" stroke-dasharray="2,2"/>
+    <line x1="60" y1="80" x2="550" y2="80" stroke-dasharray="2,2"/>
+  </g>
+  
+  <!-- Y-axis ticks and labels -->
+  <g font-family="Arial, sans-serif" font-size="10" fill="#34495e">
+    <text x="55" y="335" text-anchor="end">0</text>
+    <text x="55" y="285" text-anchor="end">100</text>
+    <text x="55" y="235" text-anchor="end">200</text>
+    <text x="55" y="185" text-anchor="end">300</text>
+    <text x="55" y="135" text-anchor="end">400</text>
+    <text x="55" y="85" text-anchor="end">500</text>
+  </g>
+  
+  <!-- X-axis ticks and labels -->
+  <g font-family="Arial, sans-serif" font-size="10" fill="#34495e">
+    <text x="120" y="345" text-anchor="middle">1000</text>
+    <text x="240" y="345" text-anchor="middle">5000</text>
+    <text x="360" y="345" text-anchor="middle">10000</text>
+    <text x="480" y="345" text-anchor="middle">50000</text>
+  </g>
+  
+  <!-- Data points and lines -->
+  <!-- Exact Match -->
+  <polyline points="120,320 240,295 360,275 480,250" fill="none" stroke="#e74c3c" stroke-width="3"/>
+  <circle cx="120" cy="320" r="4" fill="#e74c3c"/>
+  <circle cx="240" cy="295" r="4" fill="#e74c3c"/>
+  <circle cx="360" cy="275" r="4" fill="#e74c3c"/>
+  <circle cx="480" cy="250" r="4" fill="#e74c3c"/>
+  
+  <!-- KMP -->
+  <polyline points="120,315 240,285 360,265 480,240" fill="none" stroke="#3498db" stroke-width="3"/>
+  <circle cx="120" cy="315" r="4" fill="#3498db"/>
+  <circle cx="240" cy="285" r="4" fill="#3498db"/>
+  <circle cx="360" cy="265" r="4" fill="#3498db"/>
+  <circle cx="480" cy="240" r="4" fill="#3498db"/>
+  
+  <!-- Boyer-Moore -->
+  <polyline points="120,310 240,270 360,245 480,220" fill="none" stroke="#2ecc71" stroke-width="3"/>
+  <circle cx="120" cy="310" r="4" fill="#2ecc71"/>
+  <circle cx="240" cy="270" r="4" fill="#2ecc71"/>
+  <circle cx="360" cy="245" r="4" fill="#2ecc71"/>
+  <circle cx="480" cy="220" r="4" fill="#2ecc71"/>
+  
+  <!-- Rabin-Karp -->
+  <polyline points="120,325 240,300 360,280 480,255" fill="none" stroke="#f39c12" stroke-width="3"/>
+  <circle cx="120" cy="325" r="4" fill="#f39c12"/>
+  <circle cx="240" cy="300" r="4" fill="#f39c12"/>
+  <circle cx="360" cy="280" r="4" fill="#f39c12"/>
+  <circle cx="480" cy="255" r="4" fill="#f39c12"/>
+  
+  <!-- Legend -->
+  <rect x="400" y="60" width="140" height="100" fill="white" stroke="#bdc3c7" stroke-width="1" opacity="0.9"/>
+  <text x="470" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Legend</text>
+  <line x1="410" y1="90" x2="430" y2="90" stroke="#e74c3c" stroke-width="3"/>
+  <text x="435" y="95" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Exact Match</text>
+  <line x1="410" y1="110" x2="430" y2="110" stroke="#3498db" stroke-width="3"/>
+  <text x="435" y="115" font-family="Arial, sans-serif" font-size="10" fill="#34495e">KMP</text>
+  <line x1="410" y1="130" x2="430" y2="130" stroke="#2ecc71" stroke-width="3"/>
+  <text x="435" y="135" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Boyer-Moore</text>
+  <line x1="410" y1="150" x2="430" y2="150" stroke="#f39c12" stroke-width="3"/>
+  <text x="435" y="155" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Rabin-Karp</text>
+</svg>
+

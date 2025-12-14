@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Time Complexity Comparison
+  </text>
+  
+  <!-- Y-axis label -->
+  <text x="20" y="200" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#34495e" transform="rotate(-90 20 200)">
+    Time Complexity (log scale)
+  </text>
+  
+  <!-- X-axis label -->
+  <text x="300" y="380" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#34495e">
+    Sequence Length (n)
+  </text>
+  
+  <!-- Grid lines -->
+  <g stroke="#e0e0e0" stroke-width="1">
+    <line x1="60" y1="50" x2="60" y2="330"/>
+    <line x1="60" y1="330" x2="550" y2="330"/>
+  </g>
+  
+  <!-- Complexity curves (logarithmic) -->
+  <!-- O(n) -->
+  <polyline points="60,280 200,250 340,220 480,190" fill="none" stroke="#2ecc71" stroke-width="3"/>
+  <text x="490" y="185" font-family="Arial, sans-serif" font-size="10" fill="#2ecc71" font-weight="bold">O(n)</text>
+  
+  <!-- O(n log n) -->
+  <polyline points="60,300 200,270 340,240 480,210" fill="none" stroke="#3498db" stroke-width="3"/>
+  <text x="490" y="205" font-family="Arial, sans-serif" font-size="10" fill="#3498db" font-weight="bold">O(n log n)</text>
+  
+  <!-- O(n²) -->
+  <polyline points="60,320 200,310 340,300 480,290" fill="none" stroke="#e74c3c" stroke-width="3"/>
+  <text x="490" y="285" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c" font-weight="bold">O(n²)</text>
+  
+  <!-- Algorithm labels -->
+  <g font-family="Arial, sans-serif" font-size="9" fill="#34495e">
+    <text x="100" y="275" fill="#2ecc71">KMP, Boyer-Moore</text>
+    <text x="100" y="295" fill="#3498db">Suffix Array</text>
+    <text x="100" y="315" fill="#e74c3c">Smith-Waterman</text>
+  </g>
+  
+  <!-- X-axis scale -->
+  <g font-family="Arial, sans-serif" font-size="10" fill="#34495e">
+    <text x="120" y="345" text-anchor="middle">100</text>
+    <text x="240" y="345" text-anchor="middle">1K</text>
+    <text x="360" y="345" text-anchor="middle">10K</text>
+    <text x="480" y="345" text-anchor="middle">100K</text>
+  </g>
+</svg>
+

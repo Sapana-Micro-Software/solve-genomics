@@ -1,0 +1,792 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{svg}
+\usepackage{eso-pic}
+\usepackage{lastpage}
+\usepackage{tikz}
+
+% Watermark on every slide
+\setbeamertemplate{background}{
+  \tikz[overlay,remember picture]
+  \node[rotate=45,text=gray!20,font=\fontsize{2cm}{2cm}\selectfont] at (current page.center) {PREPRINT};
+}
+
+% Header and Footer
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{
+  \hfill
+  \begin{beamercolorbox}[wd=0.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}
+    \usebeamerfont{author in head/foot}Shyamal Suhana Chandra, Sapana Micro Software
+  \end{beamercolorbox}
+  \hfill
+  \begin{beamercolorbox}[wd=0.2\paperwidth,ht=2.25ex,dp=1ex,center]{page number in head/foot}
+    \usebeamerfont{page number in head/foot}\insertframenumber{} / \inserttotalframenumber
+  \end{beamercolorbox}
+  \hfill
+}
+
+\title[DNA Sequence Alignment]{Comprehensive DNA Sequence Alignment\\and Pattern Matching Algorithms}
+\subtitle{Implementation, Analysis, and Performance Evaluation}
+\author{Shyamal Suhana Chandra}
+\institute{Sapana Micro Software}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Human DNA Overview}
+\begin{itemize}
+    \item \textbf{Haploid genome}: ~3.2 billion base pairs
+    \item \textbf{Diploid genome}: ~6.4 billion base pairs
+    \item \textbf{Chromosomes}: 23 pairs (46 total)
+    \item \textbf{Coding DNA}: Only 1-2\% codes for proteins
+    \item Challenge: Efficiently search and align sequences
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Problem Statement}
+\begin{block}{Key Challenges}
+\begin{itemize}
+    \item Finding patterns in large sequences
+    \item Handling mutations, insertions, deletions
+    \item Scaling to genome-sized data
+    \item Balancing accuracy and speed
+    \item Managing memory requirements
+\end{itemize}
+\end{block}
+
+\begin{block}{Our Approach}
+Comprehensive implementation and analysis of 20+ algorithms covering:
+\begin{itemize}
+    \item Exact and approximate matching
+    \item Local and global alignment
+    \item Compression techniques
+    \item Modern ML approaches
+    \item Parallel/distributed methods
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Algorithms Overview}
+
+\begin{frame}{Algorithm Categories}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{block}{Classic Algorithms}
+\begin{itemize}
+    \item Exact Match
+    \item Naive Search
+    \item Rabin-Karp
+    \item KMP
+    \item Boyer-Moore
+\end{itemize}
+\end{block}
+
+\column{0.5\textwidth}
+\begin{block}{Advanced Algorithms}
+\begin{itemize}
+    \item Smith-Waterman
+    \item Needleman-Wunsch
+    \item Fuzzy Search
+    \item WARP-CTC
+    \item MCMC Evolution
+\end{itemize}
+\end{block}
+\end{columns}
+
+\begin{block}{Modern Approaches}
+\begin{itemize}
+    \item Embedding Search
+    \item CNN Models
+    \item Lightweight LLM
+    \item DDMCMC
+    \item Parallel/Distributed
+    \item Concurrent Multi-Technique
+    \item Skip-Graph Indexing
+    \item Dancing Links (Algorithm X)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Exact Matching Algorithms}
+
+\begin{frame}{Exact Matching: Performance}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includesvg[width=\textwidth]{figures/performance_comparison}
+\end{figure}
+
+\column{0.5\textwidth}
+\begin{table}
+\centering
+\footnotesize
+\caption{Performance Comparison}
+\begin{tabular}{lcc}
+\toprule
+Algorithm & Time (μs) & Complexity \\
+\midrule
+Exact Match & 45 & O(n*m) \\
+Naive Search & 48 & O(n*m) \\
+Rabin-Karp & 52 & O(n+m) avg \\
+KMP & 38 & O(n+m) \\
+Boyer-Moore & 25 & O(n/m) best \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{columns}
+
+\begin{block}{Key Findings}
+\begin{itemize}
+    \item Boyer-Moore fastest for long patterns
+    \item KMP provides guaranteed linear time
+    \item Rabin-Karp good for multiple patterns
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Rabin-Karp Algorithm}
+\begin{block}{Key Features}
+\begin{itemize}
+    \item Uses rolling hash for efficient pattern matching
+    \item Average case: O(n+m)
+    \item Worst case: O(n*m) (hash collisions)
+    \item Suitable for multiple pattern search
+\end{itemize}
+\end{block}
+
+\begin{block}{Algorithm}
+\begin{enumerate}
+    \item Calculate hash of pattern
+    \item Calculate hash of first window
+    \item Slide window, update hash incrementally
+    \item Verify matches (hash collision check)
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{KMP Algorithm}
+\begin{block}{Key Features}
+\begin{itemize}
+    \item Preprocesses pattern to build failure function
+    \item No backtracking in text
+    \item Guaranteed O(n+m) time complexity
+    \item Optimal for single pattern search
+\end{itemize}
+\end{block}
+
+\begin{block}{Failure Function}
+\begin{itemize}
+    \item LPS (Longest Proper Prefix which is also Suffix)
+    \item Precomputed in O(m) time
+    \item Enables skipping characters in text
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Boyer-Moore Algorithm}
+\begin{block}{Two Heuristics}
+\begin{enumerate}
+    \item \textbf{Bad Character}: Rightmost occurrence table
+    \item \textbf{Good Suffix}: Suffix matching table
+\end{enumerate}
+\end{block}
+
+\begin{block}{Performance}
+\begin{itemize}
+    \item Best case: O(n/m) - can skip large portions
+    \item Worst case: O(n*m)
+    \item Often fastest in practice for long patterns
+    \item Right-to-left pattern matching
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Dynamic Programming Algorithms}
+
+\begin{frame}{Smith-Waterman: Local Alignment}
+\begin{block}{Algorithm}
+\begin{itemize}
+    \item Finds best matching subsequences
+    \item Uses dynamic programming matrix
+    \item Scoring: match (+2), mismatch (-1), gap (-1)
+    \item Minimum score: 0 (local alignment)
+    \item Traceback from maximum score
+\end{itemize}
+\end{block}
+
+\begin{block}{Use Cases}
+\begin{itemize}
+    \item Finding conserved domains
+    \item Detecting local similarities
+    \item Protein domain identification
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Needleman-Wunsch: Global Alignment}
+\begin{block}{Algorithm}
+\begin{itemize}
+    \item Aligns entire sequences end-to-end
+    \item Similar to Smith-Waterman but:
+    \begin{itemize}
+        \item Initializes first row/column with gaps
+        \item No minimum score (can be negative)
+        \item Traceback from bottom-right
+    \end{itemize}
+\end{itemize}
+\end{block}
+
+\begin{block}{Use Cases}
+\begin{itemize}
+    \item Comparing closely related sequences
+    \item Evolutionary analysis
+    \item Full sequence comparison
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Alignment Performance}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includesvg[width=\textwidth]{figures/algorithm_complexity}
+\end{figure}
+
+\column{0.5\textwidth}
+\begin{table}
+\centering
+\footnotesize
+\caption{Alignment Performance}
+\begin{tabular}{lccc}
+\toprule
+Algorithm & 500x500 & 1000x1000 & Memory \\
+\midrule
+Smith-Waterman & 12.5ms & 50ms & O(n*m) \\
+Needleman-Wunsch & 15.0ms & 60ms & O(n*m) \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{columns}
+
+\begin{block}{Scaling Characteristics}
+\begin{itemize}
+    \item Quadratic time and space complexity
+    \item Memory becomes limiting factor for large sequences
+    \item Space-optimized versions available (two-row DP)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Approximate Matching}
+
+\begin{frame}{Fuzzy Search with Edit Distance}
+\begin{block}{Features}
+\begin{itemize}
+    \item Configurable distance threshold
+    \item Handles insertions, deletions, substitutions
+    \item Returns positions and distances
+    \item Case-insensitive matching
+\end{itemize}
+\end{block}
+
+\begin{block}{Edit Distance Variants}
+\begin{itemize}
+    \item \textbf{Levenshtein}: Standard edit distance
+    \item \textbf{Damerau-Levenshtein}: Includes transpositions
+    \item \textbf{DNA-specific}: Different costs for transitions vs transversions
+    \item \textbf{Hamming}: Substitutions only (same length)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{WARP-CTC Alignment}
+\begin{block}{Connectionist Temporal Classification}
+\begin{itemize}
+    \item Handles sequences with gaps naturally
+    \item Extends pattern with blanks: " A T C G "
+    \item Forward-backward algorithm for probabilities
+    \item Viterbi decoding for best path
+    \item Beam search for top-k paths
+\end{itemize}
+\end{block}
+
+\begin{block}{Advantages}
+\begin{itemize}
+    \item Probabilistic alignment scores
+    \item Handles variable-length patterns
+    \item Multiple alignment paths
+    \item Suitable for sequences with indels
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Compression Methods}
+
+\begin{frame}{Grammar-Based Compression}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includesvg[width=\textwidth]{figures/compression_ratio}
+\end{figure}
+
+\column{0.5\textwidth}
+\begin{block}{Algorithm}
+\begin{enumerate}
+    \item Find repeating patterns
+    \item Build grammar rules
+    \item Replace with references
+    \item Store grammar separately
+\end{enumerate}
+\end{block}
+
+\begin{block}{Results}
+\begin{itemize}
+    \item \textbf{High entropy}: Ratio ≈ 1.0
+    \item \textbf{Low entropy}: Ratio ≈ 0.3-0.5
+    \item \textbf{Lossless}: Perfect reconstruction
+\end{itemize}
+\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Lossy Compression}
+\begin{block}{Methods}
+\begin{enumerate}
+    \item \textbf{Frequency-based}: Keep only frequent patterns
+    \item \textbf{Pattern approximation}: Replace similar patterns
+    \item \textbf{Truncation}: Remove low-entropy regions
+\end{enumerate}
+\end{block}
+
+\begin{block}{Trade-offs}
+\begin{itemize}
+    \item Higher compression ratios (0.1-0.3)
+    \item Information loss
+    \item Approximate reconstruction
+    \item Suitable when exact match not required
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Modern Approaches}
+
+\begin{frame}{Embedding-Based Search}
+\begin{block}{Vector Embeddings}
+\begin{itemize}
+    \item Convert sequences to fixed-size vectors
+    \item Methods: hash-based, k-mer, frequency-based
+    \item Cosine similarity for matching
+    \item Fast similarity search after indexing
+\end{itemize}
+\end{block}
+
+\begin{block}{Performance}
+\begin{itemize}
+    \item Indexing: O(n*d) where d is embedding dimension
+    \item Search: O(d) per query
+    \item Suitable for large-scale similarity search
+    \item Top-k retrieval with threshold filtering
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Deep Learning Methods}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{block}{CNN}
+\begin{itemize}
+    \item Convolutional layers
+    \item Feature extraction
+    \item Pattern recognition
+    \item Probability-based matching
+\end{itemize}
+\end{block}
+
+\column{0.5\textwidth}
+\begin{block}{Lightweight LLM}
+\begin{itemize}
+    \item Transformer architecture
+    \item Self-attention mechanism
+    \item Position encoding
+    \item Sequence embeddings
+\end{itemize}
+\end{block}
+\end{columns}
+
+\begin{block}{Applications}
+\begin{itemize}
+    \item Pattern classification
+    \item Similarity detection
+    \item Feature learning
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{MCMC Pattern Evolution}
+\begin{block}{Markov Chain Monte Carlo}
+\begin{itemize}
+    \item Mutates patterns to find matches
+    \item DNA-specific mutations (substitution, insertion, deletion)
+    \item Metropolis-Hastings acceptance
+    \item Simulated annealing with temperature cooling
+\end{itemize}
+\end{block}
+
+\begin{block}{Results}
+\begin{itemize}
+    \item Successfully evolves patterns toward matches
+    \item Typical iterations: 100-1000
+    \item Acceptance rate: 20-40\%
+    \item Finds patterns not in initial search
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{DDMCMC: Data-Driven MCMC}
+\begin{block}{Key Innovation}
+\begin{itemize}
+    \item Uses data distribution to guide sampling
+    \item Proposal distribution from sequence embeddings
+    \item Mix of random walk and data-driven proposals
+    \item Efficient exploration of embedding space
+\end{itemize}
+\end{block}
+
+\begin{block}{Advantages for Vector Data}
+\begin{itemize}
+    \item Faster convergence than random walk
+    \item Focuses on high-likelihood regions
+    \item Handles high-dimensional spaces well
+    \item Adaptive to data characteristics
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Parallel and Distributed Methods}
+
+\begin{frame}{Parallel Search Methods}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includesvg[width=\textwidth]{figures/parallel_scaling}
+\end{figure}
+
+\column{0.5\textwidth}
+\begin{block}{Approaches}
+\begin{itemize}
+    \item Parallel chunk processing
+    \item Map-Reduce pattern
+    \item Work-Stealing
+    \item Pipeline processing
+\end{itemize}
+\end{block}
+
+\begin{block}{Scaling Results}
+\begin{table}
+\centering
+\footnotesize
+\begin{tabular}{lccc}
+\toprule
+Method & 2T & 4T & 8T \\
+\midrule
+Parallel & 230μs & 120μs & 65μs \\
+Work-Steal & 220μs & 110μs & 58μs \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Scaling to Infinity}
+\begin{block}{Design Principles}
+\begin{itemize}
+    \item \textbf{Horizontal scaling}: Add more workers/nodes
+    \item \textbf{Chunk-based}: Divide work into independent units
+    \item \textbf{No shared state}: Each chunk processed independently
+    \item \textbf{Merge results}: Combine results from all chunks
+    \item \textbf{Work-stealing}: Adapts to varying workloads
+\end{itemize}
+\end{block}
+
+\begin{block}{Scalability Characteristics}
+\begin{itemize}
+    \item Linear scaling with number of threads/workers
+    \item Minimal communication overhead
+    \item Suitable for distributed systems
+    \item Can scale to petabyte-scale sequences
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Benchmark Results}
+
+\begin{frame}{Sequence Complexity Impact}
+\begin{block}{High Entropy (Random)}
+\begin{itemize}
+    \item Entropy: ~2.0 bits (maximum)
+    \item Performance: Slower (more comparisons)
+    \item Compression: Low effectiveness (ratio ≈ 1.0)
+    \item Use case: Worst-case performance testing
+\end{itemize}
+\end{block}
+
+\begin{block}{Low Entropy (Repetitive)}
+\begin{itemize}
+    \item Entropy: <1.0 bits
+    \item Performance: Faster (early matches)
+    \item Compression: High effectiveness (ratio ≈ 0.3-0.5)
+    \item Use case: Best-case performance, repetitive regions
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Comprehensive Benchmark Results}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includesvg[width=\textwidth]{figures/memory_usage}
+\end{figure}
+
+\column{0.5\textwidth}
+\begin{table}
+\centering
+\tiny
+\caption{Performance Summary}
+\begin{tabular}{lcc}
+\toprule
+Algorithm & Time & Memory \\
+\midrule
+Exact Match & 45μs & O(1) \\
+KMP & 38μs & O(m) \\
+Boyer-Moore & 25μs & O(m) \\
+Fuzzy (d=1) & 120μs & O(m) \\
+Smith-Waterman & 50ms & O(n*m) \\
+Embedding & 5μs & O(n*d) \\
+CNN & 200μs & O(n) \\
+MCMC & 5ms & O(1) \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{columns}
+\end{frame}
+
+\section{Analysis and Discussion}
+
+\begin{frame}{Algorithm Selection Guidelines}
+\begin{block}{Choose Based on Requirements}
+\begin{itemize}
+    \item \textbf{Exact match}: KMP or Boyer-Moore
+    \item \textbf{Approximate}: Fuzzy Search with edit distance
+    \item \textbf{Local similarity}: Smith-Waterman
+    \item \textbf{Global alignment}: Needleman-Wunsch
+    \item \textbf{Large-scale}: Embedding search or parallel methods
+    \item \textbf{Repetitive data}: Grammar compression
+    \item \textbf{Pattern evolution}: MCMC
+    \item \textbf{Gap handling}: WARP-CTC
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Key Trade-offs}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includesvg[width=\textwidth]{figures/accuracy_vs_speed}
+\end{figure}
+
+\column{0.5\textwidth}
+\begin{block}{Accuracy vs. Speed}
+\begin{itemize}
+    \item Exact: Slower, accurate
+    \item Heuristic: Faster, may miss
+    \item Probabilistic: Fast, confidence scores
+\end{itemize}
+\end{block}
+
+\begin{block}{Memory vs. Time}
+\begin{itemize}
+    \item Space-optimized: More computation
+    \item Full DP: More memory, faster
+    \item Compression: Storage vs. search speed
+\end{itemize}
+\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Performance Insights}
+\begin{block}{Key Findings}
+\begin{enumerate}
+    \item Boyer-Moore fastest for exact matching (long patterns)
+    \item KMP provides guaranteed linear time
+    \item Dynamic programming optimal but expensive
+    \item Embedding search enables fast similarity search
+    \item Compression effective for repetitive sequences
+    \item Parallel methods scale linearly
+    \item MCMC successfully evolves patterns
+    \item WARP-CTC handles gaps naturally
+    \item Concurrent search provides comprehensive matching
+    \item Skip-graph enables efficient indexed search
+    \item Dancing links solves exact cover efficiently
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\section{Advanced Algorithms}
+
+\begin{frame}{Concurrent Multi-Technique Search}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{block}{Features}
+\begin{itemize}
+    \item Multiple algorithms in parallel threads
+    \item Result combination and consensus
+    \item Configurable technique selection
+    \item Performance comparison
+\end{itemize}
+\end{block}
+
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includesvg[width=0.9\textwidth]{figures/concurrent_search}
+\caption{Concurrent vs Sequential}
+\end{figure}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Skip-Graph Hierarchical Indexing}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{block}{Features}
+\begin{itemize}
+    \item Hierarchical multi-level structure
+    \item Hash table for O(1) lookup
+    \item Pre-cached subsequences
+    \item Optimized for long sequences
+\end{itemize}
+\end{block}
+
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includesvg[width=0.9\textwidth]{figures/skip_graph_structure}
+\caption{Skip-Graph Structure}
+\end{figure}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Dancing Links (Algorithm X)}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{block}{Features}
+\begin{itemize}
+    \item Exact cover problem solving
+    \item Doubly-linked circular lists
+    \item Sparse-entropic optimization
+    \item Efficient backtracking
+\end{itemize}
+\end{block}
+
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includesvg[width=0.9\textwidth]{figures/dancing_links}
+\caption{Dancing Links Structure}
+\end{figure}
+\end{columns}
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Summary}
+\begin{block}{Contributions}
+\begin{itemize}
+    \item Comprehensive implementation of 20+ algorithms
+    \item Detailed performance benchmarks
+    \item Complexity analysis (high vs. low entropy)
+    \item Scalability evaluation (parallel/distributed)
+    \item Integration of modern techniques
+    \item Complete open-source implementation
+\end{itemize}
+\end{block}
+
+\begin{block}{Key Takeaways}
+\begin{itemize}
+    \item Algorithm choice depends on use case
+    \item No single algorithm optimal for all scenarios
+    \item Modern approaches enable new capabilities
+    \item Parallel methods essential for scale
+    \item Compression valuable for repetitive data
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Future Directions}
+\begin{itemize}
+    \item GPU acceleration for dynamic programming
+    \item Distributed computing framework integration
+    \item Real genomic dataset evaluation
+    \item Advanced compression techniques
+    \item Hybrid algorithm approaches
+    \item Machine learning model training
+    \item Cloud-scale deployment
+    \item Protein language models (PLMs) for sequence analysis
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Related Work and References}
+\begin{block}{Recent Advances}
+\begin{itemize}
+    \item Protein Language Models (PLMs) for sequence analysis
+    \begin{itemize}
+        \item Bag-of-Mer (BoM) pooling for amino acid embeddings
+        \item ARIES: Scalable multiple-sequence alignment using PLM embeddings
+        \item Structure prediction and functional annotation from sequence
+    \end{itemize}
+    \item Reference: M. Singh, ``Advancing protein sequence analysis with protein language models,'' 
+          MIT CSAIL Bioinformatics Seminar, Dec. 2025
+    \item \url{https://www.csail.mit.edu/event/advancing-protein-sequence-analysis-protein-language-models}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\centering
+\Huge Thank You!
+
+\vspace{1cm}
+
+\Large Questions?
+
+\vspace{2cm}
+
+\small
+\textcopyright\ 2025, Shyamal Suhana Chandra. All rights reserved.
+\end{frame}
+
+\end{document}
+

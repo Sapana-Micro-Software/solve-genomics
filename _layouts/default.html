@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <!-- SEO -->
+    {% seo %}
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="{{ '/' | relative_url }}" class="text-2xl font-bold text-primary-600">
+                    {{ site.title }}
+                </a>
+                <ul class="flex space-x-6">
+                    <li><a href="{{ '/' | relative_url }}#overview" class="text-gray-700 hover:text-primary-600 transition">Overview</a></li>
+                    <li><a href="{{ '/' | relative_url }}#algorithms" class="text-gray-700 hover:text-primary-600 transition">Algorithms</a></li>
+                    <li><a href="{{ '/' | relative_url }}#downloads" class="text-gray-700 hover:text-primary-600 transition">Downloads</a></li>
+                    <li><a href="{{ '/' | relative_url }}#code" class="text-gray-700 hover:text-primary-600 transition">Code</a></li>
+                    <li><a href="{{ '/' | relative_url }}#results" class="text-gray-700 hover:text-primary-600 transition">Results</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {{ content }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10 mt-20">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025, Shyamal Suhana Chandra. All rights reserved.</p>
+            <p class="mt-2 text-gray-400">
+                {{ site.organization }} | 
+                <a href="https://github.com/{{ site.github.username }}/{{ site.github.repository }}" 
+                   class="hover:text-white transition" target="_blank">GitHub</a> | 
+                <a href="{{ '/doc/build/paper.pdf' | relative_url }}" 
+                   class="hover:text-white transition">Paper</a> | 
+                <a href="{{ '/doc/build/presentation.pdf' | relative_url }}" 
+                   class="hover:text-white transition">Presentation</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
+

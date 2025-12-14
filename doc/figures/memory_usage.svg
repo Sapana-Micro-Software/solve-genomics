@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Memory Usage by Algorithm Type
+  </text>
+  
+  <!-- Y-axis label -->
+  <text x="20" y="200" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#34495e" transform="rotate(-90 20 200)">
+    Memory Complexity
+  </text>
+  
+  <!-- Bars -->
+  <!-- O(1) -->
+  <rect x="50" y="280" width="80" height="50" fill="#2ecc71" opacity="0.8"/>
+  <text x="90" y="275" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">O(1)</text>
+  <text x="90" y="350" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#34495e">Exact/Naive</text>
+  
+  <!-- O(m) -->
+  <rect x="150" y="250" width="80" height="80" fill="#3498db" opacity="0.8"/>
+  <text x="190" y="245" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">O(m)</text>
+  <text x="190" y="350" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#34495e">KMP/BM</text>
+  
+  <!-- O(n) -->
+  <rect x="250" y="220" width="80" height="110" fill="#f39c12" opacity="0.8"/>
+  <text x="290" y="215" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">O(n)</text>
+  <text x="290" y="350" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#34495e">Suffix Tree</text>
+  
+  <!-- O(n*m) -->
+  <rect x="350" y="100" width="80" height="230" fill="#e74c3c" opacity="0.8"/>
+  <text x="390" y="95" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">O(n*m)</text>
+  <text x="390" y="350" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#34495e">DP Align</text>
+  
+  <!-- O(n*d) -->
+  <rect x="450" y="180" width="80" height="150" fill="#9b59b6" opacity="0.8"/>
+  <text x="490" y="175" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34495e">O(n*d)</text>
+  <text x="490" y="350" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#34495e">Embedding</text>
+  
+  <!-- Grid lines -->
+  <g stroke="#e0e0e0" stroke-width="1" opacity="0.5">
+    <line x1="30" y1="280" x2="550" y2="280" stroke-dasharray="2,2"/>
+    <line x1="30" y1="250" x2="550" y2="250" stroke-dasharray="2,2"/>
+    <line x1="30" y1="220" x2="550" y2="220" stroke-dasharray="2,2"/>
+    <line x1="30" y1="190" x2="550" y2="190" stroke-dasharray="2,2"/>
+    <line x1="30" y1="160" x2="550" y2="160" stroke-dasharray="2,2"/>
+    <line x1="30" y1="130" x2="550" y2="130" stroke-dasharray="2,2"/>
+    <line x1="30" y1="100" x2="550" y2="100" stroke-dasharray="2,2"/>
+  </g>
+</svg>
+

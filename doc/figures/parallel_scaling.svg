@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Parallel Search Scaling Performance
+  </text>
+  
+  <!-- Y-axis label -->
+  <text x="20" y="200" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#34495e" transform="rotate(-90 20 200)">
+    Time (microseconds)
+  </text>
+  
+  <!-- X-axis label -->
+  <text x="300" y="380" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#34495e">
+    Number of Threads
+  </text>
+  
+  <!-- Grid lines -->
+  <g stroke="#e0e0e0" stroke-width="1">
+    <line x1="60" y1="50" x2="60" y2="330"/>
+    <line x1="60" y1="330" x2="550" y2="330"/>
+    <line x1="60" y1="280" x2="550" y2="280" stroke-dasharray="2,2"/>
+    <line x1="60" y1="230" x2="550" y2="230" stroke-dasharray="2,2"/>
+    <line x1="60" y1="180" x2="550" y2="180" stroke-dasharray="2,2"/>
+    <line x1="60" y1="130" x2="550" y2="130" stroke-dasharray="2,2"/>
+    <line x1="60" y1="80" x2="550" y2="80" stroke-dasharray="2,2"/>
+  </g>
+  
+  <!-- Y-axis ticks and labels -->
+  <g font-family="Arial, sans-serif" font-size="10" fill="#34495e">
+    <text x="55" y="335" text-anchor="end">0</text>
+    <text x="55" y="285" text-anchor="end">100</text>
+    <text x="55" y="235" text-anchor="end">200</text>
+    <text x="55" y="185" text-anchor="end">300</text>
+    <text x="55" y="135" text-anchor="end">400</text>
+    <text x="55" y="85" text-anchor="end">500</text>
+  </g>
+  
+  <!-- X-axis ticks and labels -->
+  <g font-family="Arial, sans-serif" font-size="10" fill="#34495e">
+    <text x="120" y="345" text-anchor="middle">1</text>
+    <text x="240" y="345" text-anchor="middle">2</text>
+    <text x="360" y="345" text-anchor="middle">4</text>
+    <text x="480" y="345" text-anchor="middle">8</text>
+  </g>
+  
+  <!-- Ideal scaling line (dashed) -->
+  <polyline points="120,80 240,160 360,240 480,320" fill="none" stroke="#95a5a6" stroke-width="2" stroke-dasharray="5,5" opacity="0.6"/>
+  <text x="490" y="315" font-family="Arial, sans-serif" font-size="9" fill="#95a5a6" opacity="0.6">Ideal</text>
+  
+  <!-- Parallel Search -->
+  <polyline points="120,80 240,160 360,240 480,295" fill="none" stroke="#e74c3c" stroke-width="3"/>
+  <circle cx="120" cy="80" r="4" fill="#e74c3c"/>
+  <circle cx="240" cy="160" r="4" fill="#e74c3c"/>
+  <circle cx="360" cy="240" r="4" fill="#e74c3c"/>
+  <circle cx="480" cy="295" r="4" fill="#e74c3c"/>
+  
+  <!-- Work-Stealing -->
+  <polyline points="120,80 240,155 360,235 480,290" fill="none" stroke="#3498db" stroke-width="3"/>
+  <circle cx="120" cy="80" r="4" fill="#3498db"/>
+  <circle cx="240" cy="155" r="4" fill="#3498db"/>
+  <circle cx="360" cy="235" r="4" fill="#3498db"/>
+  <circle cx="480" cy="290" r="4" fill="#3498db"/>
+  
+  <!-- Map-Reduce -->
+  <polyline points="120,85 240,165 360,245 480,300" fill="none" stroke="#2ecc71" stroke-width="3"/>
+  <circle cx="120" cy="85" r="4" fill="#2ecc71"/>
+  <circle cx="240" cy="165" r="4" fill="#2ecc71"/>
+  <circle cx="360" cy="245" r="4" fill="#2ecc71"/>
+  <circle cx="480" cy="300" r="4" fill="#2ecc71"/>
+  
+  <!-- Legend -->
+  <rect x="400" y="60" width="140" height="100" fill="white" stroke="#bdc3c7" stroke-width="1" opacity="0.9"/>
+  <text x="470" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Legend</text>
+  <line x1="410" y1="90" x2="430" y2="90" stroke="#e74c3c" stroke-width="3"/>
+  <text x="435" y="95" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Parallel</text>
+  <line x1="410" y1="110" x2="430" y2="110" stroke="#3498db" stroke-width="3"/>
+  <text x="435" y="115" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Work-Stealing</text>
+  <line x1="410" y1="130" x2="430" y2="130" stroke="#2ecc71" stroke-width="3"/>
+  <text x="435" y="135" font-family="Arial, sans-serif" font-size="10" fill="#34495e">Map-Reduce</text>
+</svg>
+
