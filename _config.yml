@@ -4,7 +4,10 @@ description: Comprehensive DNA Sequence Alignment and Pattern Matching Algorithm
 author: Shyamal Suhana Chandra
 organization: Sapana Micro Software
 url: https://sapana-micro-software.github.io
-baseurl: /solve-genomics
+baseurl: ""
+github:
+  username: Sapana-Micro-Software
+  repository: solve-genomics
 
 # Build settings
 markdown: kramdown
@@ -31,6 +34,7 @@ exclude:
   - tests
   - src
   - .github/workflows
+  - index.html
 
 # Collections
 collections:
