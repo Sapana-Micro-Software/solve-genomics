@@ -35,6 +35,9 @@ exclude:
   - src
   - .github/workflows
   - index.html
+# Include PDFs in docs directory
+include:
+  - docs/pdfs/
 
 # Collections
 collections:

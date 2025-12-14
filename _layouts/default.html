@@ -49,10 +49,10 @@
                 {{ site.organization }} | 
                 <a href="https://github.com/{{ site.github.username }}/{{ site.github.repository }}" 
                    class="hover:text-white transition" target="_blank">GitHub</a> | 
-                <a href="https://github.com/Sapana-Micro-Software/solve-genomics/raw/main/doc/build/paper.pdf" 
-                   class="hover:text-white transition" target="_blank">Paper</a> | 
-                <a href="https://github.com/Sapana-Micro-Software/solve-genomics/raw/main/doc/build/presentation.pdf" 
-                   class="hover:text-white transition" target="_blank">Presentation</a>
+                <a href="{{ '/docs/pdfs/paper.pdf' | relative_url }}" 
+                   class="hover:text-white transition">Paper</a> | 
+                <a href="{{ '/docs/pdfs/presentation.pdf' | relative_url }}" 
+                   class="hover:text-white transition">Presentation</a>
             </p>
         </div>
     </footer>

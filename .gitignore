@@ -19,6 +19,8 @@ assets/js/*.js.map
 # Build outputs
 dist/
 build/
+# Allow PDFs in docs directory for GitHub Pages
+!docs/pdfs/*.pdf
 
 # OS
 .DS_Store

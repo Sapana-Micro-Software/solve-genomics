@@ -165,35 +165,35 @@ description: Comprehensive DNA Sequence Alignment and Pattern Matching Algorithm
             <div class="space-y-4">
                 <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
                     <div>
-                        <a href="https://github.com/Sapana-Micro-Software/solve-genomics/raw/main/doc/build/paper.pdf" 
+                        <a href="{{ '/docs/pdfs/paper.pdf' | relative_url }}" 
                            class="text-lg font-semibold text-primary-600 hover:underline" download>
                             Paper (PDF)
                         </a>
                         <p class="text-sm text-gray-600 mt-1">Comprehensive paper with all algorithms, implementations, and analysis</p>
                     </div>
-                    <span class="text-sm text-gray-500">~320 KB</span>
+                    <span class="text-sm text-gray-500">~9 KB</span>
                 </div>
 
                 <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
                     <div>
-                        <a href="https://github.com/Sapana-Micro-Software/solve-genomics/raw/main/doc/build/presentation.pdf" 
+                        <a href="{{ '/docs/pdfs/presentation.pdf' | relative_url }}" 
                            class="text-lg font-semibold text-primary-600 hover:underline" download>
                             Presentation (PDF)
                         </a>
                         <p class="text-sm text-gray-600 mt-1">Beamer presentation with visualizations and results</p>
                     </div>
-                    <span class="text-sm text-gray-500">~232 KB</span>
+                    <span class="text-sm text-gray-500">~235 KB</span>
                 </div>
 
                 <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
                     <div>
-                        <a href="https://github.com/Sapana-Micro-Software/solve-genomics/raw/main/doc/build/benchmark_results.pdf" 
+                        <a href="{{ '/docs/pdfs/benchmark_results.pdf' | relative_url }}" 
                            class="text-lg font-semibold text-primary-600 hover:underline" download>
                             Benchmark Results (PDF)
                         </a>
                         <p class="text-sm text-gray-600 mt-1">Comprehensive benchmark results with charts, graphs, and performance analysis</p>
                     </div>
-                    <span class="text-sm text-gray-500">~171 KB</span>
+                    <span class="text-sm text-gray-500">~172 KB</span>
                 </div>
             </div>
 
