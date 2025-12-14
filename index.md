@@ -165,7 +165,7 @@ description: Comprehensive DNA Sequence Alignment and Pattern Matching Algorithm
             <div class="space-y-4">
                 <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
                     <div>
-                        <a href="{{ '/doc/build/paper.pdf' | relative_url }}" 
+                        <a href="https://github.com/Sapana-Micro-Software/solve-genomics/raw/main/doc/build/paper.pdf" 
                            class="text-lg font-semibold text-primary-600 hover:underline" download>
                             Paper (PDF)
                         </a>
@@ -176,7 +176,7 @@ description: Comprehensive DNA Sequence Alignment and Pattern Matching Algorithm
 
                 <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
                     <div>
-                        <a href="{{ '/doc/build/presentation.pdf' | relative_url }}" 
+                        <a href="https://github.com/Sapana-Micro-Software/solve-genomics/raw/main/doc/build/presentation.pdf" 
                            class="text-lg font-semibold text-primary-600 hover:underline" download>
                             Presentation (PDF)
                         </a>
@@ -187,7 +187,7 @@ description: Comprehensive DNA Sequence Alignment and Pattern Matching Algorithm
 
                 <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
                     <div>
-                        <a href="{{ '/doc/build/benchmark_results.pdf' | relative_url }}" 
+                        <a href="https://github.com/Sapana-Micro-Software/solve-genomics/raw/main/doc/build/benchmark_results.pdf" 
                            class="text-lg font-semibold text-primary-600 hover:underline" download>
                             Benchmark Results (PDF)
                         </a>
@@ -201,7 +201,7 @@ description: Comprehensive DNA Sequence Alignment and Pattern Matching Algorithm
             
             <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
                 <div>
-                    <a href="https://github.com/shyamalchandra/Solve-Genomics" 
+                    <a href="https://github.com/Sapana-Micro-Software/solve-genomics" 
                        class="text-lg font-semibold text-primary-600 hover:underline" target="_blank">
                         GitHub Repository
                     </a>
@@ -220,8 +220,8 @@ description: Comprehensive DNA Sequence Alignment and Pattern Matching Algorithm
         <div class="card max-w-4xl mx-auto">
             <h2 class="text-2xl font-bold text-primary-600 mb-4">Quick Start</h2>
             <p class="mb-4">Clone the repository and build the project:</p>
-            <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>git clone https://github.com/shyamalchandra/Solve-Genomics.git
-cd Solve-Genomics
+            <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>git clone https://github.com/Sapana-Micro-Software/solve-genomics.git
+cd solve-genomics
 mkdir build && cd build
 cmake ..
 make -j4
@@ -244,9 +244,9 @@ make -j4
 ./bin/dna_aligner dancing</code></pre>
 
             <div class="mt-6">
-                <a href="https://github.com/shyamalchandra/Solve-Genomics" 
+                <a href="https://github.com/Sapana-Micro-Software/solve-genomics" 
                    class="btn mr-4" target="_blank">View on GitHub</a>
-                <a href="https://github.com/shyamalchandra/Solve-Genomics/blob/main/README.md" 
+                <a href="https://github.com/Sapana-Micro-Software/solve-genomics/blob/main/README.md" 
                    class="btn btn-secondary" target="_blank">View README</a>
             </div>
         </div>
