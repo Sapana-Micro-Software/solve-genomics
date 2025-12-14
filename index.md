@@ -87,91 +87,155 @@ description: Comprehensive DNA Sequence Alignment and Pattern Matching Algorithm
         <h2 class="section-title">Algorithm Categories</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="algorithms-container">
-            <div class="card">
-                <h3 class="text-xl font-bold text-primary-600 mb-4">Exact Matching</h3>
-                <ul class="space-y-2 text-gray-700">
-                    <li>✓ Exact Match</li>
-                    <li>✓ Naive Search</li>
-                    <li>✓ Rabin-Karp</li>
-                    <li>✓ KMP</li>
-                    <li>✓ Boyer-Moore</li>
-                </ul>
+            <div class="card relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <img src="{{ '/assets/images/svg/dna-sequence.svg' | relative_url }}" alt="" class="w-full h-full">
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <img src="{{ '/assets/images/svg/dna-sequence.svg' | relative_url }}" alt="" class="w-12 h-12 mr-3 svg-glow">
+                        <h3 class="text-xl font-bold text-primary-600">Exact Matching</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Exact Match</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Naive Search</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Rabin-Karp</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> KMP</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Boyer-Moore</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="card">
-                <h3 class="text-xl font-bold text-primary-600 mb-4">Approximate Matching</h3>
-                <ul class="space-y-2 text-gray-700">
-                    <li>✓ Fuzzy Search</li>
-                    <li>✓ Edit Distance</li>
-                    <li>✓ Levenshtein</li>
-                    <li>✓ Hamming</li>
-                    <li>✓ DNA-specific</li>
-                </ul>
+            <div class="card relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <img src="{{ '/assets/images/svg/algorithm-flow.svg' | relative_url }}" alt="" class="w-full h-full">
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <img src="{{ '/assets/images/svg/algorithm-flow.svg' | relative_url }}" alt="" class="w-12 h-12 mr-3 svg-glow">
+                        <h3 class="text-xl font-bold text-primary-600">Approximate Matching</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Fuzzy Search</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Edit Distance</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Levenshtein</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Hamming</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> DNA-specific</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="card">
-                <h3 class="text-xl font-bold text-primary-600 mb-4">Dynamic Programming</h3>
-                <ul class="space-y-2 text-gray-700">
-                    <li>✓ Smith-Waterman</li>
-                    <li>✓ Needleman-Wunsch</li>
-                    <li>✓ Space-optimized</li>
-                    <li>✓ Affine gap</li>
-                    <li>✓ Banded alignment</li>
-                </ul>
+            <div class="card relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <img src="{{ '/assets/images/svg/performance-chart.svg' | relative_url }}" alt="" class="w-full h-full">
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <img src="{{ '/assets/images/svg/performance-chart.svg' | relative_url }}" alt="" class="w-12 h-12 mr-3 svg-glow">
+                        <h3 class="text-xl font-bold text-primary-600">Dynamic Programming</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Smith-Waterman</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Needleman-Wunsch</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Space-optimized</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Affine gap</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Banded alignment</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="card">
-                <h3 class="text-xl font-bold text-primary-600 mb-4">Compression</h3>
-                <ul class="space-y-2 text-gray-700">
-                    <li>✓ Grammar-based</li>
-                    <li>✓ Lossy compression</li>
-                    <li>✓ Association lists</li>
-                    <li>✓ Pattern approximation</li>
-                </ul>
+            <div class="card relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <img src="{{ '/assets/images/svg/network-graph.svg' | relative_url }}" alt="" class="w-full h-full">
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <img src="{{ '/assets/images/svg/network-graph.svg' | relative_url }}" alt="" class="w-12 h-12 mr-3 svg-glow">
+                        <h3 class="text-xl font-bold text-primary-600">Compression</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Grammar-based</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Lossy compression</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Association lists</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Pattern approximation</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="card">
-                <h3 class="text-xl font-bold text-primary-600 mb-4">Modern ML</h3>
-                <ul class="space-y-2 text-gray-700">
-                    <li>✓ Embedding search</li>
-                    <li>✓ CNN</li>
-                    <li>✓ Lightweight LLM</li>
-                    <li>✓ LSTM/GRU</li>
-                    <li>✓ Attention models</li>
-                </ul>
+            <div class="card relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <img src="{{ '/assets/images/svg/dna-helix.svg' | relative_url }}" alt="" class="w-full h-full">
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <img src="{{ '/assets/images/svg/dna-helix.svg' | relative_url }}" alt="" class="w-12 h-12 mr-3 svg-glow">
+                        <h3 class="text-xl font-bold text-primary-600">Modern ML</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Embedding search</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> CNN</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Lightweight LLM</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> LSTM/GRU</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Attention models</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="card">
-                <h3 class="text-xl font-bold text-primary-600 mb-4">Advanced Methods</h3>
-                <ul class="space-y-2 text-gray-700">
-                    <li>✓ MCMC Evolution</li>
-                    <li>✓ DDMCMC</li>
-                    <li>✓ WARP-CTC</li>
-                    <li>✓ Aho-Corasick</li>
-                    <li>✓ Suffix Trees</li>
-                </ul>
+            <div class="card relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <img src="{{ '/assets/images/svg/algorithm-flow.svg' | relative_url }}" alt="" class="w-full h-full">
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <img src="{{ '/assets/images/svg/algorithm-flow.svg' | relative_url }}" alt="" class="w-12 h-12 mr-3 svg-glow">
+                        <h3 class="text-xl font-bold text-primary-600">Advanced Methods</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> MCMC Evolution</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> DDMCMC</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> WARP-CTC</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Aho-Corasick</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Suffix Trees</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="card">
-                <h3 class="text-xl font-bold text-primary-600 mb-4">Parallel & Distributed</h3>
-                <ul class="space-y-2 text-gray-700">
-                    <li>✓ Multi-threaded</li>
-                    <li>✓ Map-Reduce</li>
-                    <li>✓ Work-stealing</li>
-                    <li>✓ Pipeline</li>
-                    <li>✓ Concurrent</li>
-                </ul>
+            <div class="card relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <img src="{{ '/assets/images/svg/network-graph.svg' | relative_url }}" alt="" class="w-full h-full">
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <img src="{{ '/assets/images/svg/network-graph.svg' | relative_url }}" alt="" class="w-12 h-12 mr-3 svg-glow">
+                        <h3 class="text-xl font-bold text-primary-600">Parallel & Distributed</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Multi-threaded</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Map-Reduce</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Work-stealing</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Pipeline</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Concurrent</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="card">
-                <h3 class="text-xl font-bold text-primary-600 mb-4">Indexing Structures</h3>
-                <ul class="space-y-2 text-gray-700">
-                    <li>✓ Skip-Graph</li>
-                    <li>✓ Chord DHT</li>
-                    <li>✓ Dancing Links</li>
-                    <li>✓ Wu-Manber</li>
-                    <li>✓ Bitap</li>
-                </ul>
+            <div class="card relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <img src="{{ '/assets/images/svg/performance-chart.svg' | relative_url }}" alt="" class="w-full h-full">
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <img src="{{ '/assets/images/svg/performance-chart.svg' | relative_url }}" alt="" class="w-12 h-12 mr-3 svg-glow">
+                        <h3 class="text-xl font-bold text-primary-600">Indexing Structures</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Skip-Graph</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Chord DHT</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Dancing Links</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Wu-Manber</li>
+                        <li class="flex items-center"><span class="text-primary-500 mr-2">✓</span> Bitap</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -185,51 +249,75 @@ description: Comprehensive DNA Sequence Alignment and Pattern Matching Algorithm
             <h2 class="text-2xl font-bold text-primary-600 mb-6">Papers and Documentation</h2>
             
             <div class="space-y-4">
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
-                    <div>
-                        <a href="{{ '/docs/pdfs/paper.pdf' | relative_url }}" 
-                           class="text-lg font-semibold text-primary-600 hover:underline" download>
-                            Paper (PDF)
-                        </a>
-                        <p class="text-sm text-gray-600 mt-1">Comprehensive paper with all algorithms, implementations, and analysis</p>
+                <div class="flex justify-between items-center p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg hover:shadow-lg transition-all duration-300 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <img src="{{ '/assets/images/svg/dna-sequence.svg' | relative_url }}" alt="" class="w-full h-full">
                     </div>
-                    <span class="text-sm text-gray-500">~9 KB</span>
+                    <div class="flex items-center flex-1 relative z-10">
+                        <img src="{{ '/assets/images/svg/performance-chart.svg' | relative_url }}" alt="" class="w-12 h-12 mr-4 svg-glow">
+                        <div class="flex-1">
+                            <a href="{{ '/docs/pdfs/paper.pdf' | relative_url }}" 
+                               class="text-lg font-semibold text-primary-600 hover:underline flex items-center" download>
+                                <span class="mr-2">📄</span> Paper (PDF)
+                            </a>
+                            <p class="text-sm text-gray-600 mt-1">Comprehensive paper with all algorithms, implementations, and analysis</p>
+                        </div>
+                    </div>
+                    <span class="text-sm text-gray-500 relative z-10">~9 KB</span>
                 </div>
 
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
-                    <div>
-                        <a href="{{ '/docs/pdfs/presentation.pdf' | relative_url }}" 
-                           class="text-lg font-semibold text-primary-600 hover:underline" download>
-                            Presentation (PDF)
-                        </a>
-                        <p class="text-sm text-gray-600 mt-1">Beamer presentation with visualizations and results</p>
+                <div class="flex justify-between items-center p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg hover:shadow-lg transition-all duration-300 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <img src="{{ '/assets/images/svg/algorithm-flow.svg' | relative_url }}" alt="" class="w-full h-full">
                     </div>
-                    <span class="text-sm text-gray-500">~235 KB</span>
+                    <div class="flex items-center flex-1 relative z-10">
+                        <img src="{{ '/assets/images/svg/algorithm-flow.svg' | relative_url }}" alt="" class="w-12 h-12 mr-4 svg-glow">
+                        <div class="flex-1">
+                            <a href="{{ '/docs/pdfs/presentation.pdf' | relative_url }}" 
+                               class="text-lg font-semibold text-primary-600 hover:underline flex items-center" download>
+                                <span class="mr-2">📊</span> Presentation (PDF)
+                            </a>
+                            <p class="text-sm text-gray-600 mt-1">Beamer presentation with visualizations and results</p>
+                        </div>
+                    </div>
+                    <span class="text-sm text-gray-500 relative z-10">~235 KB</span>
                 </div>
 
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
-                    <div>
-                        <a href="{{ '/docs/pdfs/benchmark_results.pdf' | relative_url }}" 
-                           class="text-lg font-semibold text-primary-600 hover:underline" download>
-                            Benchmark Results (PDF)
-                        </a>
-                        <p class="text-sm text-gray-600 mt-1">Comprehensive benchmark results with charts, graphs, and performance analysis</p>
+                <div class="flex justify-between items-center p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg hover:shadow-lg transition-all duration-300 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <img src="{{ '/assets/images/svg/network-graph.svg' | relative_url }}" alt="" class="w-full h-full">
                     </div>
-                    <span class="text-sm text-gray-500">~172 KB</span>
+                    <div class="flex items-center flex-1 relative z-10">
+                        <img src="{{ '/assets/images/svg/network-graph.svg' | relative_url }}" alt="" class="w-12 h-12 mr-4 svg-glow">
+                        <div class="flex-1">
+                            <a href="{{ '/docs/pdfs/benchmark_results.pdf' | relative_url }}" 
+                               class="text-lg font-semibold text-primary-600 hover:underline flex items-center" download>
+                                <span class="mr-2">📈</span> Benchmark Results (PDF)
+                            </a>
+                            <p class="text-sm text-gray-600 mt-1">Comprehensive benchmark results with charts, graphs, and performance analysis</p>
+                        </div>
+                    </div>
+                    <span class="text-sm text-gray-500 relative z-10">~172 KB</span>
                 </div>
             </div>
 
             <h2 class="text-2xl font-bold text-primary-600 mb-6 mt-10">Source Code</h2>
             
-            <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
-                <div>
-                    <a href="https://github.com/Sapana-Micro-Software/solve-genomics" 
-                       class="text-lg font-semibold text-primary-600 hover:underline" target="_blank">
-                        GitHub Repository
-                    </a>
-                    <p class="text-sm text-gray-600 mt-1">Complete C++ implementation with tests and benchmarks</p>
+            <div class="flex justify-between items-center p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg hover:shadow-lg transition-all duration-300 group relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <img src="{{ '/assets/images/svg/dna-helix.svg' | relative_url }}" alt="" class="w-full h-full">
                 </div>
-                <span class="text-sm text-gray-500">GitHub</span>
+                <div class="flex items-center flex-1 relative z-10">
+                    <img src="{{ '/assets/images/svg/dna-helix.svg' | relative_url }}" alt="" class="w-12 h-12 mr-4 svg-glow">
+                    <div class="flex-1">
+                        <a href="https://github.com/Sapana-Micro-Software/solve-genomics" 
+                           class="text-lg font-semibold text-primary-600 hover:underline flex items-center" target="_blank">
+                            <span class="mr-2">🔗</span> GitHub Repository
+                        </a>
+                        <p class="text-sm text-gray-600 mt-1">Complete C++ implementation with tests and benchmarks</p>
+                    </div>
+                </div>
+                <span class="text-sm text-gray-500 relative z-10">GitHub</span>
             </div>
         </div>
     </div>
